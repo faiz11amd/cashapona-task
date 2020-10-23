@@ -1,0 +1,28 @@
+<div class="container">
+  <button (click)="openDialogAddLead()" mat-raised-button color="primary" class="add_lead_modal_btn mb-4 mt-5">Add Lead</button>
+
+  <table border="1" cellpadding="5" class="leads_table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Mobile Num</th>
+        <th>Location Type</th>
+        <th>Location String</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let data of dataSource">
+        <td>{{ data.first_name }} {{ data.last_name}}</td>
+        <td>{{ data.email }}</td>
+        <td>{{ data.mobile }}</td>
+        <td>{{ data.location_type }}</td>
+        <td>{{ data.location_string }}</td>
+
+      </tr>
+    </tbody>
+  </table>
+
+      <p *ngIf="dataSource.length<=0" class="text-center my-4 text-primary">No Data Available</p>
+
+</div>

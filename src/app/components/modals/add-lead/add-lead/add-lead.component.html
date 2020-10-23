@@ -1,0 +1,40 @@
+<div class="d-flex justify-content-between mb-4">
+  <h4 class="fs-22">Add Lead</h4>
+  <div (click)="onNoClick()" class="fa fa-close"></div>
+</div>
+
+<div>
+  <form class="add_lead_form row" [formGroup]="leadForm">
+    <div class="col-6 mb-2">
+      <label for="First Name">First Name<i class="fa fa-asterisk"></i></label>
+      <input formControlName="first_name" name="first_name" type="text" class="form-control"></div>
+    <div class="col-6 mb-2">
+      <label for="Last Name">Last Name<i class="fa fa-asterisk"></i></label>
+      <input formControlName="last_name" name="last_name" type="text" class="form-control"></div>
+    <div class="col-6 mb-2">
+      <label for="Email Address">Email Address<i class="fa fa-asterisk"></i></label>
+      <input formControlName="email" name="email" type="text" class="form-control"></div>
+    <div class="col-6 mb-2">
+      <label for="Mobile">Mobile<i class="fa fa-asterisk"></i></label>
+      <input formControlName="mobile" name="mobile" type="text" class="form-control"></div>
+    <div class="col-6 mb-2">
+      <label for="Location Type">Country<i class="fa fa-asterisk"></i></label>
+      <select formControlName="location_type" name="location_type" class="form-control" placeholder="Select Country">
+        <option value="Australia">Australia</option>
+        <option value="Australia">Australia</option>
+        <option value="United Kingdom">United Kingdom</option>
+      </select>
+    </div>
+    <div class="col-6">
+      <label for="Location String">State<i class="fa fa-asterisk"></i></label>
+      <input formControlName="location_string" name="location_string" type="text" class="form-control">
+    </div>
+  
+  </form>
+  <div class="d-flex justify-content-end mt-4">
+    <button class="mr-1" mat-raised-button color="warn" (click)="onNoClick()">Close</button>
+    <button (click)="addLead()" class="add_lead_btn ml-1" mat-raised-button color="primary" [disabled]="!leadForm.valid">Save</button>
+  </div>
+
+
+</div>
